@@ -1,0 +1,46 @@
+{
+  "name": "premialo_back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "lint": "standard . --fix",
+    "test": "jest --verbose --silent",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.18.2",
+    "express-oauth2-jwt-bearer": "^1.2.0",
+    "express-openid-connect": "^2.9.0",
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.3",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.20",
+    "standard": "^16.0.4",
+    "supertest": "^6.2.2"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
