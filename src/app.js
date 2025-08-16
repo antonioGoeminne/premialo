@@ -4,6 +4,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const handleErrors = require('./middleware/handleErrors')
+const { db } = require('./firebase')
 const app = express()
 
 app.use(cors())
@@ -13,6 +14,12 @@ app.use(helmet())
 app.use(morgan('dev'))
 app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ extended: true, limit: '5mb' }))
+
+// Hacemos la DB disponible para todas las rutas
+app.use((req, res, next) => {
+  req.db = db
+  next()
+})
 
 // Rutas Endpoints
 app.use('/api', require('./routes'))

@@ -3,6 +3,9 @@ const router = express.Router()
 const fs = require('fs')
 const { NotFound } = require('../../errors')
 
+// Feature routes
+router.use('/groups', require('../features/groups/routes'))
+
 const PATH_ROUTES = __dirname
 
 const removeExtension = (fileName) => {
