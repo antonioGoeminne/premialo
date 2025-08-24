@@ -3,13 +3,19 @@ const router = express.Router()
 const { NotFound } = require('../../errors')
 
 // Feature routes
-router.use('/groups', require('../features/groups/routes'))
+const groupsRoutes = require('../features/groups/routes');
+const tasksRoutes = require('../features/tasks/routes');
 
 const PATH_ROUTES = __dirname
 
 const removeExtension = (fileName) => {
   // ...existing code...
 }
+
+const router = (app) => {
+  app.use('/api/groups', groupsRoutes);
+  app.use('/api/tasks', tasksRoutes);
+};
 
 // Manejador general de errores 404 (al final del listado de rutas de los endpoints)
 router.use((req, res) => {
